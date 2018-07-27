@@ -4,25 +4,14 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CardGame {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		Deck deck = new Deck();
 		deck.shuffle();
 		
 		Scanner scanner = new Scanner(System.in);
-		int players = 0;
+		int players = 2;
 		ArrayList<ArrayList<String>> playerHands = new ArrayList<>();
-		ArrayList<String> discard = new ArrayList<>();
-		do {
-			System.out.println("How many players are there?");
-			
-			if(scanner.hasNextInt()) {
-				players = scanner.nextInt();	
-			}else {
-				System.out.println("That is not a valid number of players. Try again.");
-				players = 0;
-				scanner.next();	
-			}
-		}while(players <= 1);
+		ArrayList<String> discard;
 		
 		System.out.println("Lets play");
 	
@@ -34,7 +23,17 @@ public class CardGame {
 		
 		System.out.println(playerHands);
 		
-		discard = deck.dealCards(52-(numCardsPerHand*players));		
+		discard = deck.dealCards(52-(numCardsPerHand*players));	
+		
+		System.out.println("Press space if the NUMBER or LETTER on the cards is the same");
+		
+		Thread.sleep(1000);
+		
+		System.out.println("Ready?");
+		
+		Thread.sleep(1000);
+		
+		System.out.println("GO!");
 		
 		scanner.close();
 	}
