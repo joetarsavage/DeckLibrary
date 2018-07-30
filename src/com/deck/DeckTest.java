@@ -94,5 +94,25 @@ class DeckTest {
 		assertEquals("King of Diamonds",Deck.getLongCard("K of D"));
 		assertEquals("Nine of Clubs",Deck.getLongCard("9 of C"));
 		assertEquals("Ace of Spades",Deck.getLongCard("A of S"));
+		assertEquals("Two of Spades",Deck.getLongCard("2 of S"));
+		assertEquals("Three of Spades",Deck.getLongCard("3 of S"));
+		assertEquals("Four of Spades",Deck.getLongCard("4 of S"));
+		assertEquals("Five of Spades",Deck.getLongCard("5 of S"));
+		assertEquals("Six of Spades",Deck.getLongCard("6 of S"));
+		assertEquals("Seven of Spades",Deck.getLongCard("7 of S"));
+		assertEquals("Eight of Spades",Deck.getLongCard("8 of S"));
+		assertEquals("Nine of Spades",Deck.getLongCard("9 of S"));
+		assertEquals("Ten of Spades",Deck.getLongCard("10 of S"));
+		assertEquals("Jack of Spades",Deck.getLongCard("J of S"));
+		assertEquals("Queen of Spades",Deck.getLongCard("Q of S"));
+		
+	}
+	
+	@Test
+	public void testCardListAsString() {
+		Deck deck = new Deck();
+		Deck.displayCards(deck.dealCards(2));
+		Deck.displayCards(deck.dealCards(52));
+		
 	}
 }
